@@ -51,8 +51,8 @@ func TestNodeDepths(t *testing.T) {
 
 	result := NodeDepths(tree)
 
+	fmt.Println("NODE DEPTHS 'S RESULT:")
 	fmt.Println(result)
-
 	assert.Equal(t, 16, result, "Node Depths Wrong")
 
 }

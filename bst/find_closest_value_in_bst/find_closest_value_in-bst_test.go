@@ -54,6 +54,7 @@ func TestFindClosestValueInBst(t *testing.T) {
 
 	result := tree.FindClosestValue(12)
 
+	fmt.Println("FIND CLOSEST VALUE IN BST 'S RESULT:")
 	fmt.Println(result)
 
 	assert.Equal(t, 13, result, "112")
