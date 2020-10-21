@@ -1,10 +1,13 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"testing"
+)
 
 var lst = []int{8, 22, 7, 9, 31, 19, 5, 13}
 
-func main() {
+func TestBubbleSort(t testing.T) {
 	count := 0
 	for i := 0; i < len(lst)-1; i++ {
 		for j := 1; j < len(lst); j++ {

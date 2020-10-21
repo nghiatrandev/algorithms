@@ -1,7 +1,9 @@
-package main
+package bst
 
 import (
 	"fmt"
+	"github.com/stretchr/testify/assert"
+	"testing"
 )
 
 type BST struct {
@@ -11,7 +13,7 @@ type BST struct {
 	Right *BST `json:"right"`
 }
 
-func main() {
+func TestFindClosestValueInBst(t *testing.T) {
 	tree := BST{
 		Value: 10,
 		Left: &BST{
@@ -53,6 +55,8 @@ func main() {
 	result := tree.FindClosestValue(12)
 
 	fmt.Println(result)
+
+	assert.Equal(t, 13, result, "112")
 
 }
 

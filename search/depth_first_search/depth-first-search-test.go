@@ -1,4 +1,4 @@
-package main
+package depth_first_search
 
 import (
 	"fmt"

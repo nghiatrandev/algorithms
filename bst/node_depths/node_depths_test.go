@@ -1,6 +1,10 @@
-package main
+package node_depths
 
-import "fmt"
+import (
+	"fmt"
+	"github.com/stretchr/testify/assert"
+	"testing"
+)
 
 type BinaryTree struct {
 	Value       int
@@ -42,10 +46,15 @@ func (tree *BinaryTree) Insert(values []int, i int) *BinaryTree {
 
 // ----------------- REPAIR -------------------
 
-func main() {
+func TestNodeDepths(t *testing.T) {
 	tree := NewBinaryTree(1, 2, 3, 4, 5, 6, 7, 8, 9)
 
-	fmt.Println(NodeDepths(tree))
+	result := NodeDepths(tree)
+
+	fmt.Println(result)
+
+	assert.Equal(t, 16, result, "Node Depths Wrong")
+
 }
 
 func NodeDepths(root *BinaryTree) int {

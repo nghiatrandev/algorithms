@@ -1,6 +1,9 @@
-package main
+package branch_sums
 
-import "fmt"
+import (
+	"fmt"
+	"testing"
+)
 
 type BinaryTree struct {
 	Value int
@@ -9,7 +12,7 @@ type BinaryTree struct {
 	Right *BinaryTree
 }
 
-func main() {
+func TestBranchSums(t *testing.T) {
 
 	//tree := NewBinaryTree(1, 1,2,3,4,5,6,7,8,9,10)
 	tree := NewBinaryTree(0, 1, 10, 100)
