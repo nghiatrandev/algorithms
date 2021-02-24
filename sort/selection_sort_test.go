@@ -1,7 +1,8 @@
-package search
+package sort
 
 import (
 	"fmt"
+	"github.com/nghiatrandev/algorithms/sort/bubble-sort"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )
@@ -23,7 +24,7 @@ func TestSelectionSort(t *testing.T) {
 			lst1[minI], lst1[i] = lst1[i], lst1[minI]
 		}
 	}
-	fmt.Println(lst)
+	fmt.Println(bubble_sort.lst)
 	fmt.Println("SELECTION SORT:")
 	assert.Equal(t, []int{1, 2, 3, 4, 5, 6, 7, 8, 9}, lst1, "selection sort wrong")
 }
