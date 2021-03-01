@@ -18,27 +18,17 @@ func main() {
 }
 
 func RemoveDuplicatesFromLinkedList(linkedList *LinkedList) *LinkedList {
-	result := new(LinkedList)
-	result.Value = linkedList.Value
-	result.Next = linkedList.GetNext(linkedList.Value)
-	return result
-}
-
-func (linkedList *LinkedList) GetNext(esceptValue int) *LinkedList {
-
-	if linkedList != nil {
-		//next := linkedList.GetNext(esceptValue)
-		if linkedList.Value == esceptValue {
-			linkedList.Next.GetNext(esceptValue)
-		} else {
-			return &LinkedList{
-				Value: linkedList.Value,
-				Next:  linkedList.GetNext(linkedList.Value),
-			}
+	currentNode := linkedList
+	for linkedList != nil {
+		nextDistinctNode := currentNode
+		for nextDistinctNode != nil && nextDistinctNode.Value == currentNode.Value {
+			nextDistinctNode = nextDistinctNode.Next
 		}
-	}
 
-	return nil
+		currentNode.Next = nextDistinctNode
+		currentNode = nextDistinctNode
+	}
+	return linkedList
 }
 
 // ############### sand box ############
