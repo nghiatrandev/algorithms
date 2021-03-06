@@ -19,12 +19,12 @@ func main() {
 
 func RemoveDuplicatesFromLinkedList(linkedList *LinkedList) *LinkedList {
 	currentNode := linkedList
-	for linkedList != nil {
+
+	for currentNode != nil {
 		nextDistinctNode := currentNode
 		for nextDistinctNode != nil && nextDistinctNode.Value == currentNode.Value {
 			nextDistinctNode = nextDistinctNode.Next
 		}
-
 		currentNode.Next = nextDistinctNode
 		currentNode = nextDistinctNode
 	}
